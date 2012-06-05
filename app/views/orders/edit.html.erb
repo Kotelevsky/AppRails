@@ -1,0 +1,29 @@
+<h1>Заказ</h1>
+
+<%= form_for Olist.new do |f| %>
+<div class="field">
+  Модель
+  <%= collection_select(:olist, :slist_id, Slist.all, :id, :name) %>
+  <%= f.hidden_field :order_id, :value => @order.id %>
+  <%= f.submit "Add" %>
+</div>
+<% end %>
+<br/>
+
+<table>
+<tr>
+  <th>Действие</th>
+  <th></th>
+</tr>
+<% @order.olists.each do |f| %>
+<tr>
+  <td><%= f.name %></td>
+  <td><%= link_to "Delete", olist_path(@order, f.id), :confirm => 'Are you sure?', :method => :delete%></td>
+</tr>
+
+<% end %>
+<tr>
+  <td>Сумма</td>
+  <td><%= @order.ressum %></td>
+</tr>
+</table>

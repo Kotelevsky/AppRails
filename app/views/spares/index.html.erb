@@ -1,0 +1,36 @@
+<h1>Расходные материалы</h1>
+
+<%= form_for Spare.new do |f| %>
+<div class="field">
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :description %><br/>
+  <%= f.text_area :description %>
+</div>
+<div class="field">
+  <%= f.label :price %><br/>
+  <%= f.text_field :price %>
+</div>
+<div class="action">
+  <%= f.submit 'Add' %>
+</div>
+<% end %>
+<br/>
+<table>
+<tr>
+  <th>Название</th>
+  <th>Цена</th>
+  <th>Кол-во на складе</th>
+  <th></th>
+</tr>
+<% @spare.each do |f| %>
+<tr>
+  <td><%= f.name %></td>
+  <td><%= f.price %></td>
+  <td><%= f.count_of_warehouse %></td>
+  <td><%= link_to "Edit", edit_spare_path(f) %></td>
+</tr>
+<% end %>
+</table>

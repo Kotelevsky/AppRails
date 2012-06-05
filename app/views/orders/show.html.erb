@@ -1,0 +1,29 @@
+<div>
+  <%= link_to "Автомобили", cauto_path(params[:id])%>
+  <%= link_to "Заказы", order_path(params[:id]) %>
+</div>
+
+<%= form_for Order.new do |f| %>
+<div class="field">
+  Модель
+  <%= collection_select(:order, :cauto_id, @client.cautos, :id, :name) %>
+  <%= f.hidden_field :client_id, :value => params[:id] %>
+  <%= f.submit "Add" %>
+</div>
+<% end %>
+<br/>
+
+<table>
+<tr>
+  <th>Модель</th>
+  <th>Дата</th>
+  <th></th>
+</tr>
+<% @client.orders.each do |f| %>
+<tr>
+  <td><%= f.cauto.name %></td>
+  <td><%= f.created_at %></td>
+  <td><%= link_to "Edit", edit_order_path(f.id) %></td>
+</tr>
+<% end %>
+</table>

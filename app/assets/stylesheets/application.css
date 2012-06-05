@@ -1,0 +1,148 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+#menu_left {
+    float: left;
+    width: 250px;
+    
+}
+
+#menu_right {
+    margin-left: 250px;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-left-color: #cfcfcf;
+    padding-left: 10px;
+    /*background-image: url("background.jpg");*/
+    background-position: right bottom; /* Положение фона */
+    background-repeat: no-repeat;
+    min-height: 250px;
+}
+
+#main {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+#background {
+    width: 900px;
+    margin: 50px auto 5px;
+    background-color: #ccc
+}
+
+#footer-img {
+    width: 900px;
+    margin: 0px auto 0px;
+    background-image: url("footer.jpg");
+    height: 99px;
+}
+
+#heder {
+    height: 150px;
+}
+
+#header-top {
+    background-color: #f2f2f2;
+    height: 40px;
+}
+
+#header-menu {
+    background-image: url("header-top1.jpg");
+    height: 74px;
+}
+
+#header-fot {
+    background-image: url("header-fot.jpg");
+    height: 50px;
+}
+
+#logo {
+    margin: 10px auto 0px;
+    background-image: url("logo.gif");
+    width: 137px;
+    height: 137px;
+    position: absolute;
+}
+body {
+    background-color: black;
+    background-image: url("car.jpg");
+    background-position: center; /* Положение фона */
+    background-repeat: no-repeat;
+}
+
+#menu-logo {
+    background-image: url("logo1.gif");
+    width: 113px;
+    height: 35px;
+    margin-left: 80%;
+    position: relative;
+    top: 20px;
+}
+
+#footer {
+    margin-top: 30px;
+    height: 100px;
+    background-color: #e0e0e0;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #cfcfcf;
+
+}
+
+#footer-but {
+    height: 22px;
+    background-color: #ffffff;
+}
+
+h3 {
+    font-size: 25px;
+    text-align: center;
+}
+
+a {
+    margin-left: 10px;
+}
+
+h1 {
+    font-size: 20px;
+    margin-left: 30px;
+}
+h2 {
+    font-size: 20px;
+    padding-top: 20px;
+    margin-left: 30px;
+}
+
+table {
+    margin-top: 30px;
+    width: 90%;
+    border-color: #600;
+    border-width: 1px;
+    border-style: solid;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th {
+    text-align: center; /* Выравнивание по левому краю */
+    background: #ccc; /* Цвет фона ячеек */
+    padding: 5px; /* Поля вокруг содержимого ячеек */
+    border: 1px solid black; /* Граница вокруг ячеек */
+}
+
+td {
+    padding: 5px; /* Поля вокруг содержимого ячеек */
+    border: 1px solid black; /* Граница вокруг ячеек */
+}
+
+

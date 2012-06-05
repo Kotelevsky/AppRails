@@ -1,0 +1,9 @@
+<h1>Статус</h1>
+
+<%= form_for(@flag) do |f| %>
+<div class="field">
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+  <%= f.submit 'Update' %>
+</div>
+<% end %>

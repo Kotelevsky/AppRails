@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AppRails</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="background">
+    <div id="logo"></div>
+    <div id="heder">
+      <div id="header-top"></div>
+      <div id="header-menu">
+        <div id="menu-logo"></div>
+      </div>
+      <div id="header-fot"></div>
+    </div>
+    <div id="main">
+      <div id="menu_left">
+        <h3>Menu</h3>
+        <%= link_to "Автомобили", autos_path %><br/>
+        <%= link_to "Клиенты", clients_path %><br/>
+        <%= link_to "Виды работ", works_path %><br/>
+        <%= link_to "Расходные материалы", spares_path %><br/>
+        <%= link_to "Склады", warehouses_path %>
+
+      </div>
+      <div id="menu_right">
+        <%= yield %>
+      </div>
+      <div id="footer"></div>
+      <div id="footer-but"></div>
+    </div>
+  </div>
+</body>
+</html>

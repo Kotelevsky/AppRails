@@ -1,0 +1,11 @@
+<h1>Изменить действие</h1>
+<%= form_for(@slist) do |f| %>
+<div class="field">
+  <%= f.label "Расходные материалы" %>
+  <%= collection_select(:slist, :spare_id, Spare.all, :id, :name) %><br/>
+  <%= f.label :count %>
+  <%= f.text_field :count %>
+  <br/>
+  <%= f.submit "Update" %>
+</div>
+<% end %>

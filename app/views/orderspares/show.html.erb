@@ -1,0 +1,37 @@
+<h1>Оформить заявку</h1>
+<%= form_for Orderspare.new do |f| %>
+<div class="field">
+  <%= f.label "Расходный материал" %>
+  <%= collection_select(:orderspare, :spare_id, @spare, :id, :name) %>
+</div>
+<div class="field">
+  <%= f.label :count %>
+  <%= f.text_field :count %>
+  <%= f.hidden_field :flag_id, :value => @flag.id %>
+  <%= f.hidden_field :warehouse_id, :value => params[:id] %>
+</div>
+
+<div class="action">
+  <%= f.submit "Add" %>
+</div>
+<% end %>
+<br/>
+<h1>Заявки</h1>
+<table>
+<tr>
+  <th>id</th>
+  <th>Материал</th>
+  <th>Количество</th>
+  <th>Статус</th>
+  <th></th>
+</tr>
+<% @warehouse.each do |f| %>
+<tr>
+  <td><%= f.id %></td>
+  <td><%= f.spare.name %></td>
+  <td><%= f.count %></td>
+  <td><%= f.flag.name %></td>
+  <td><%= link_to "Edit", edit_orderspare_path(f.id) %></td>
+</tr>
+<% end %>
+</table>

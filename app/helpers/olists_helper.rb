@@ -1,0 +1,2 @@
+module OlistsHelper
+end

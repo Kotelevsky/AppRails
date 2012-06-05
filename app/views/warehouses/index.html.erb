@@ -1,0 +1,22 @@
+<h1>Склады</h1>
+
+<%= form_for Warehouse.new do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Add' %>
+</div>
+<% end %>
+<br/>
+<table>
+<tr>
+  <th>Название</th>
+  <th></th>
+</tr>
+<% @warehouse.each do |f| %>
+<tr>
+  <td><%= link_to f.name, orderspare_path(f) %></td>
+  <td><%= link_to "Edit", edit_warehouse_path(f) %></td>
+</tr>
+<% end %>
+</table>

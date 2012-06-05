@@ -1,0 +1,23 @@
+<h1>Статусы</h1>
+
+<%= form_for Flag.new do |f| %>
+<div class="field">
+  <%= f.label :name %><br/>
+  <%= f.text_field :name %>
+  <%= f.submit 'Add' %>
+</div>
+<% end %>
+<br/>
+<table>
+<tr>
+  <th>Название</th>
+  <th></th>
+</tr>
+<% @flag.each do |f| %>
+<tr>
+  <td><%= f.name %></td>
+  <td><%= link_to "Edit", edit_flag_path(f) %></td>
+</tr>
+<% end %>
+</table>
+

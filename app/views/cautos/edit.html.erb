@@ -1,0 +1,24 @@
+<div>
+  <%= link_to "Автомобили", cauto_path(params[:id])%>
+  <%= link_to "Заказы", order_path(params[:id]) %>
+</div>
+
+<h1><%= @cauto.auto.name %></h1>
+
+<%= form_for(@cauto)  do |f| %>
+<div class="field">
+  Модель
+  <%= collection_select(:cauto, :auto_id, Auto.all, :id, :name) %>
+</div>
+<div class="field">
+  <%= f.label :mileage %>
+  <%= f.text_field :mileage %>
+</div>
+<div class="field">
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+</div>
+<div class="action">
+  <%= f.submit "Update" %>
+</div>
+<% end %>

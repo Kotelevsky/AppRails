@@ -1,0 +1,41 @@
+<div>
+  <%= link_to "Автомобили", cauto_path(params[:id])%>
+  <%= link_to "Заказы", order_path(params[:id]) %>
+</div>
+
+<%= form_for Cauto.new do |f| %>
+<div class="field">
+  Модель
+  <%= collection_select(:cauto, :auto_id, Auto.all, :id, :name) %>
+  <%= f.hidden_field :client_id, :value => params[:id] %>
+</div>
+<div class="field">
+  <%= f.label :mileage %>
+  <%= f.text_field :mileage %>
+</div>
+<div class="field">
+  <%= f.label :year %>
+  <%= f.text_field :year %>
+</div>
+<div class="action">
+  <%= f.submit "Add" %>
+</div>
+<% end %>
+<br/>
+
+<table>
+<tr>
+  <th>Модель</th>
+  <th>Пробег</th>
+  <th>Год выпуска</th>
+  <th></th>
+</tr>
+<% @client.cautos.each do |f| %>
+<tr>
+  <td><%= f.auto.name %></td>
+  <td><%= f.mileage %></td>
+  <td><%= f.year %></td>
+  <td><%= link_to "Edit", edit_cauto_path(f.id) %></td>
+</tr>
+<% end %>
+</table>

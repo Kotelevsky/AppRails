@@ -1,0 +1,9 @@
+<h1><%= @auto.name %></h1>
+
+<%= form_for(@auto) do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Update" %>
+</div>
+<% end %>

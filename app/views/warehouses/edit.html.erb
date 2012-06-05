@@ -1,0 +1,9 @@
+<h1>Склад - <%= @warehouse.name %></h1>
+
+<%= form_for(@warehouse) do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit 'Update' %>
+</div>
+<% end %>

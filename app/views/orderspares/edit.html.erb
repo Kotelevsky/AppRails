@@ -1,0 +1,18 @@
+<h1>Заявка - <%= @orderspare.spare.name %></h1>
+<%= form_for(@orderspare) do |f| %>
+<div class="field">
+  <%= f.label "Расхоный материал" %>
+  <%= collection_select(:orderspare, :spare_id, @spare, :id, :name) %>
+</div>
+<div class="field">
+  <%= f.label :count %>
+  <%= f.text_field :count %>
+</div>
+<div class="field">
+  <%= f.label "Статус" %>
+  <%= collection_select(:orderspare, :flag_id, @flag, :id, :name) %>
+</div>
+<div class="actions">
+  <%= f.submit "Update" %>
+</div>
+<% end %>

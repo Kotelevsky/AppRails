@@ -1,0 +1,35 @@
+<h1>Клиенты</h1>
+
+<%= form_for Client.new do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+<div class="field">
+  <%= f.label :addres %>
+  <%= f.text_field :addres %>
+</div>
+<div class="field">
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+</div>
+<div class="action">
+  <%= f.submit "Add" %>
+</div>
+<% end %>
+
+
+<table>
+<tr>
+  <th>id</th>
+  <th>Клиент</th>
+  <th></th>
+</tr>
+<% @client.each do |f| %>
+<tr>
+  <td><%= f.id %></td>
+  <td><%= f.name %></td>
+  <td><%= link_to "Edit", edit_client_path(f) %></td>
+</tr>
+<% end %>
+</table>

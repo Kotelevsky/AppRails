@@ -1,0 +1,22 @@
+<h1>Виды работ</h1>
+
+<%= form_for Work.new do |f| %>
+<div class="field">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Add" %>
+</div>
+<% end %>
+
+<table>
+<tr>
+  <th>Название</th>
+  <th></th>
+</tr>
+<% @work.each do |f| %>
+<tr>
+  <td><%= f.name %></td>
+  <td><%= link_to "Edit", work_path(f) %></td>
+</tr>
+<% end %>
+</table>
